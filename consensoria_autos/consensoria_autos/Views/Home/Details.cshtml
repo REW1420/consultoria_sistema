@@ -1,0 +1,129 @@
+﻿@model consensoria_autos.Models.Car
+@{
+    ViewData["Title"] = "Detalles del vehículo";
+}
+
+<!-- Hero -->
+<section class="bg-secondary text-white text-center py-3 rounded-3 mb-4">
+    <div class="container">
+        <form asp-controller="Home" asp-action="Index" method="get" class="d-flex justify-content-center">
+            <div class="input-group w-50 mx-auto" style="max-width: 600px;">
+                <input type="text" name="search" class="form-control" placeholder="Buscar por modelo..." value="@ViewBag.Search" />
+                <button class="btn btn-primary" type="submit">
+                    <i class="bi bi-search"></i> Buscar
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Detalles del vehículo -->
+<div class="container pb-5">
+    <h2 class="fw-bold mb-4">@Model.model</h2>
+
+    <div class="row g-4">
+        <!-- Galería principal -->
+        <div class="col-md-7">
+            <div class="border rounded shadow-sm overflow-hidden">
+                <img id="mainImage"
+                     src="@(Model.car_images != null && Model.car_images.Any() ? Model.car_images.First().url : Model.image_url)"
+                     alt="@Model.model"
+                     class="img-fluid w-100"
+                     style="object-fit:cover; max-height:450px;" />
+            </div>
+
+            <!-- Miniaturas -->
+            @if (Model.car_images != null && Model.car_images.Any())
+            {
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    @foreach (var img in Model.car_images)
+                    {
+                        <img src="@img.url"
+                             class="thumb rounded shadow-sm"
+                             style="width: 90px; height: 90px; object-fit:cover; cursor:pointer;"
+                             onclick="changeImage('@img.url')" />
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- Información del vehículo -->
+        <div class="col-md-5">
+            <div class="border rounded p-3 h-100 bg-light">
+                <h5 class="fw-bold mb-3">Detalles del vehículo</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Año:</strong> @Model.year</li>
+                    <li><strong>Transmisión:</strong> @(Model.transmissions?.type ?? "No especificada")</li>
+                    <li><strong>Condición:</strong> @(Model.car_conditions?.label ?? "No especificada")</li>
+                    <li><strong>Publicado:</strong> @(Model.is_published ? "Sí" : "No")</li>
+                    <li><strong>Vendido:</strong> @(Model.is_sold ? "Sí" : "No")</li>
+                    <li>
+                        <strong>Precio:</strong>
+                        @if (Model.price.HasValue)
+                        {
+                            <span class="fw-bold text-success">$@Model.price.Value.ToString("N0")</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Consultar</span>
+                        }
+                    </li>
+                </ul>
+
+                <a asp-controller="Home" asp-action="ContactSeller" asp-route-id="@Model.id" class="btn btn-primary w-100 mt-3">
+                    Ponte en contacto con el vendedor
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Información adicional -->
+    <div class="mt-4">
+        <div class="border rounded p-3 bg-white shadow-sm">
+            <h5 class="fw-bold mb-3">Información adicional</h5>
+            <p class="text-muted">
+                @if (!string.IsNullOrEmpty(Model.description))
+                {
+                    @Model.description
+                }
+                else
+                {
+                    <span>
+                        Este <strong>@Model.model</strong> cuenta con mantenimiento al día, documentación en regla
+                        y está listo para ser transferido.
+                    </span>
+                }
+            </p>
+
+            @{
+                var fechaPublicacion = Model.created_at?.ToString("dd/MM/yyyy HH:mm") ?? "N/D";
+                var fechaActualizacion = Model.updated_at?.ToString("dd/MM/yyyy HH:mm") ?? "N/D";
+            }
+            <p class="text-muted small">
+                Publicado el: @fechaPublicacion | Última actualización: @fechaActualizacion
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(url) {
+        document.getElementById("mainImage").src = url;
+    }
+</script>
+
+<style>
+    .thumb {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    }
+
+        .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+    #mainImage {
+        transition: opacity 0.3s ease-in-out;
+    }
+</style>

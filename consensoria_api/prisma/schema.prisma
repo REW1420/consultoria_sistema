@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model car_conditions {
+  id    Int    @id @default(autoincrement())
+  label String @unique @db.VarChar(30)
+  cars  cars[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model cars {
+  id              Int             @id @default(autoincrement())
+  model           String          @db.VarChar(100)
+  description     String?
+  year            Int?
+  price           Decimal?        @db.Decimal(12, 2)
+  image_url       String?
+  is_published    Boolean?        @default(true)
+  transmission_id Int?
+  condition_id    Int?
+  created_by      Int?
+  created_at      DateTime?       @default(now()) @db.Timestamp(6)
+  updated_at      DateTime?       @default(now()) @db.Timestamp(6)
+  is_sold         Boolean?        @default(false)
+  sold_at         DateTime?       @db.Date
+  car_images      car_images[]
+  car_conditions  car_conditions? @relation(fields: [condition_id], references: [id], onUpdate: NoAction)
+  users           users?          @relation(fields: [created_by], references: [id], onUpdate: NoAction)
+  transmissions   transmissions?  @relation(fields: [transmission_id], references: [id], onUpdate: NoAction)
+  messages        messages[]
+}
+
+model messages {
+  id          Int       @id @default(autoincrement())
+  first_name  String    @db.VarChar(60)
+  last_name   String?   @db.VarChar(60)
+  email       String?   @db.VarChar(120)
+  phone       String?   @db.VarChar(30)
+  content     String
+  car_id      Int?
+  received_at DateTime? @default(now()) @db.Timestamp(6)
+  is_read     Boolean?  @default(false)
+  cars        cars?     @relation(fields: [car_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model transmissions {
+  id   Int    @id @default(autoincrement())
+  type String @unique @db.VarChar(50)
+  cars cars[]
+}
+
+model user_roles {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique @db.VarChar(30)
+  users users[]
+}
+
+model users {
+  id            Int        @id @default(autoincrement())
+  username      String     @unique @db.VarChar(50)
+  full_name     String     @db.VarChar(100)
+  email         String     @unique @db.VarChar(120)
+  password_hash String     @db.VarChar(255)
+  active        Boolean?   @default(true)
+  role_id       Int
+  created_at    DateTime?  @default(now()) @db.Timestamp(6)
+  cars          cars[]
+  user_roles    user_roles @relation(fields: [role_id], references: [id], onUpdate: NoAction)
+}
+
+model car_images {
+  id     Int    @id @default(autoincrement())
+  url    String
+  car_id Int
+  cars   cars   @relation(fields: [car_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([car_id], map: "idx_car_images_car_id")
+}

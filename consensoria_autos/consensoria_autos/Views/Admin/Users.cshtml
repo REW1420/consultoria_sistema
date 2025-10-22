@@ -1,0 +1,98 @@
+﻿@model IEnumerable<consensoria_autos.Models.User>
+@{
+    ViewData["Title"] = "Gestión de usuarios del sistema";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">👥 Usuarios del Sistema</h2>
+
+        
+        
+            <a asp-controller="Admin" asp-action="AddUser" class="btn btn-primary">
+                <i class="bi bi-person-plus"></i> Nuevo usuario
+            </a>
+        
+    </div>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info text-center shadow-sm">
+            <i class="bi bi-exclamation-circle"></i> No hay usuarios registrados aún.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped align-middle shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Role</th>
+                        <th>Estado</th>
+                        <th>Creado en</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.id</td>
+                            <td>@user.username</td>
+                            <td>@user.full_name</td>
+                            <td>@user.email</td>
+                            <td>@(user.user_roles?.name != null ? user.user_roles.name: "—")</td>
+                            <td>
+                                @if (user.active == true)
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactive</span>
+                                }
+                            </td>
+                            <td>@user.creacte_at.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-controller="Admin" asp-action="AddUser"
+                                       asp-route-id="@user.id"
+                                       class="btn btn-sm btn-outline-primary"
+                                       title="Editar usuario">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+
+                                    <form asp-controller="Admin" asp-action="ToggleActiveUser"
+                                          asp-route-id="@user.id"
+                                          method="post" class="d-inline">
+                                        <button type="submit"
+                                                class="btn btn-sm @(user.active == true ? "btn-outline-success" : "btn-outline-secondary")"
+                                                title="@(user.active == true ? "Desactivar" : "Activar") usuario">
+                                            <i class="bi @(user.active == true ? "bi-toggle-on" : "bi-toggle-off")"></i>
+                                        </button>
+                                    </form>
+
+                                    <form asp-controller="Admin" asp-action="DeleteUser"
+                                          asp-route-id="@user.id"
+                                          method="post" class="d-inline">
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-danger"
+                                                title="Eliminar usuario"
+                                                onclick="return confirm('¿Seguro que deseas eliminar este usuario?');">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

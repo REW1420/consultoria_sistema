@@ -1,0 +1,129 @@
+﻿@model IEnumerable<consensoria_autos.Models.Car>
+@{
+    ViewData["Title"] = "Car Management";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0"> Administrar vehichulos</h2>
+        <a asp-controller="Admin" asp-action="AddAuto" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Agregar carro
+        </a>
+    </div>
+
+    <!-- 🔍 Search bar -->
+    <form asp-controller="Admin" asp-action="AutoList" method="get" class="mb-4">
+        <div class="input-group" style="max-width: 600px;">
+            <input type="text" name="search" class="form-control"
+                   placeholder="Buscar por modelo..."
+                   value="@ViewBag.Search" />
+            <button class="btn btn-secondary" type="submit">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+        </div>
+    </form>
+
+    <!-- 🧾 No results -->
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center text-muted py-5">
+            <i class="bi bi-search fs-2"></i>
+            <p class="mt-2">No se encontro el modelo "<strong>@ViewBag.Search</strong>".</p>
+            <a asp-controller="Admin" asp-action="AutoList" class="btn btn-outline-primary mt-2">Show all</a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var car in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="@car.image_url" class="card-img-top" alt="@car.model"
+                             style="object-fit:cover; height:200px;" />
+
+                        <div class="card-body">
+                            <!-- 🏷️ Estado -->
+                            @if (car.car_conditions?.label?.ToLower() == "new")
+                            {
+                                <span class="badge bg-success mb-2">Nuevo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary mb-2">Usado</span>
+                            }
+
+                            <h5 class="card-title">@car.model</h5>
+                            <p class="text-muted small mb-2">
+                                @(string.IsNullOrWhiteSpace(car.description) ? "No description available." : car.description)
+                            </p>
+
+                            <div class="d-flex justify-content-between">
+                                <small><i class="bi bi-calendar"></i> @car.year</small>
+                                <small><i class="bi bi-gear"></i> @(car.transmissions?.type ?? "—")</small>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="fw-bold text-dark">
+                                    $@((car.price?.ToString("N0")) ?? "N/A")
+                                </span>
+                                <span class="badge bg-light text-dark">ID: @car.id</span>
+                            </div>
+
+                            <!-- ⚙️ Actions -->
+                            <div class="d-grid gap-2">
+                                <a asp-controller="Admin" asp-action="EditAuto" asp-route-id="@car.id"
+                                   class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+
+                                @if (car.is_published == true)
+                                {
+                                    <form asp-controller="Admin" asp-action="PauseCar" asp-route-id="@car.id" method="post">
+                                        <button class="btn btn-sm btn-outline-warning w-100" type="submit">
+                                            <i class="bi bi-pause-circle"></i> Pausar
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form asp-controller="Admin" asp-action="ResumeCar" asp-route-id="@car.id" method="post">
+                                        <button class="btn btn-sm btn-outline-info w-100" type="submit">
+                                            <i class="bi bi-play-circle"></i> Activar
+                                        </button>
+                                    </form>
+                                }
+
+                                @if (car.is_sold == false)
+                                {
+                                    <form asp-controller="Admin" asp-action="MarkSold" asp-route-id="@car.id" method="post">
+                                        <button class="btn btn-sm btn-outline-success w-100" type="submit">
+                                            <i class="bi bi-check-circle"></i> Marcar como vendido
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-sm btn-outline-success w-100" type="button" disabled>
+                                        <i class="bi bi-check-circle"></i> Vendido el @car.sold_at?.ToString("dd/MM/yyyy") ?? "N/D"
+                                    </button>
+                                }
+
+
+                                <form asp-controller="Admin" asp-action="DeleteAuto" asp-route-id="@car.id" method="post">
+                                    <button class="btn btn-sm btn-outline-danger w-100" type="submit"
+                                            onclick="return confirm('Estas seguro de eliminar este vehiculo?');">
+                                        <i class="bi bi-trash"></i> Eliminar
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

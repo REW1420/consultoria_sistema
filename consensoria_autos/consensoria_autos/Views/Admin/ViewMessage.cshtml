@@ -1,0 +1,54 @@
+﻿@model consensoria_autos.Models.Message
+
+@{
+    ViewData["Title"] = "View Message";
+}
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">📩 Message Details</h2>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h4 class="card-title">
+                <i class="bi bi-person"></i> @Model.first_name @Model.last_name
+            </h4>
+            <p class="text-muted mb-2">
+                <i class="bi bi-envelope"></i> @Model.email <br />
+                <i class="bi bi-telephone"></i> @Model.phone
+            </p>
+
+            <hr />
+
+            <p class="mb-3">
+                <strong>Message:</strong><br />
+                @Model.content
+            </p>
+
+            @if (Model.cars != null)
+            {
+                <div class="alert alert-info">
+                    <strong>Interested Car:</strong><br />
+                    <i class="bi bi-car-front"></i> @Model.cars?.model <br />
+                    <i class="bi bi-calendar"></i> Year: @Model.cars?.year <br />
+                    <i class="bi bi-currency-dollar"></i> Price: $@((Model.cars?.price ?? 0).ToString("N0"))
+                </div>
+            }
+
+            <p class="text-muted small">
+                <i class="bi bi-clock"></i> Received at:
+                @Model.received_at?.ToString("dd/MM/yyyy HH:mm")
+            </p>
+
+            <div class="d-flex justify-content-between mt-4">
+                <a asp-controller="Admin" asp-action="Dashboard" class="btn btn-outline-secondary">
+                    ← Back to Inbox
+                </a>
+
+                <form asp-controller="Admin" asp-action="DeleteMessage" asp-route-id="@Model.id" method="post">
+                    <button class="btn btn-danger" onclick="return confirm('Delete this message?')">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

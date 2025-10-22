@@ -1,0 +1,82 @@
+﻿@model consensoria_autos.Models.User
+@{
+    ViewData["Title"] = "Add New User";
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">Crear nuevo usuario</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <form asp-controller="Admin" asp-action="AddUser" method="post" class="border rounded p-4 bg-white shadow-sm">
+
+        <!-- Full Name & Username -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Nombre completo</label>
+                <input asp-for="full_name" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Usuario</label>
+                <input asp-for="username" class="form-control" required />
+            </div>
+        </div>
+
+        <!-- Email & Role -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Correo</label>
+                <input asp-for="email" type="email" class="form-control" required />
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">Role</label>
+                <select asp-for="user_roles.id" class="form-select" required>
+                    <option value="">Select role...</option>
+                    @if (ViewBag.Roles != null)
+                    {
+                        foreach (var r in ViewBag.Roles)
+                        {
+                            <option value="@r.id">@r.name</option>
+                        }
+                    }
+                </select>
+            </div>
+
+
+            <div class="col-md-3 d-flex align-items-center">
+                <div class="form-check mt-4">
+                    <input type="checkbox"
+                           class="form-check-input"
+                           name="active"
+                           value="true"
+                    @(Model.active == true ? "checked" : "") />
+                    <label class="form-check-label">Activar</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Password</label>
+            <input asp-for="password" type="password" class="form-control" required />
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+            <i class="bi bi-person-plus"></i> Crear
+        </button>
+    </form>
+
+    <a asp-controller="Admin" asp-action="Users" class="btn btn-outline-secondary mt-3">
+        Regresar
+    </a>
+</div>

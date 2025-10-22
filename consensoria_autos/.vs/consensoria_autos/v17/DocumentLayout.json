@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\addauto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\addauto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\editauto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\editauto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\autolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\autolist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\home\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\views\\home\\contactseller.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\views\\home\\contactseller.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|c:\\users\\user pc\\onedrive - universidad don bosco\\escritorio\\consensoria_autos\\consensoria_autos\\models\\mensajecontacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{892C65A1-E028-4C19-8239-7796B35797CD}|consensoria_autos\\consensoria_autos.csproj|solutionrelative:consensoria_autos\\models\\mensajecontacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AddUser.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\AddUser.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AddUser.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\AddUser.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:23:02.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\EditUser.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\EditUser.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\EditUser.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAFQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:22:07.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:21:20.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddAuto.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AddAuto.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\AddAuto.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AddAuto.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\AddAuto.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:19:30.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EditAuto.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\EditAuto.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\EditAuto.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\EditAuto.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\EditAuto.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAHUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:17:41.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutoList.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AutoList.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\AutoList.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\AutoList.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\AutoList.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAH0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:14:40.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAD4AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:13:27.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\Details.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Home\\Details.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\Details.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Home\\Details.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAF4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:12:03.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ContactSeller.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\ContactSeller.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Home\\ContactSeller.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\ContactSeller.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Home\\ContactSeller.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T01:54:56.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Services\\ApiClient.cs",
+              "RelativeDocumentMoniker": "consensoria_autos\\Services\\ApiClient.cs",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Services\\ApiClient.cs",
+              "RelativeToolTip": "consensoria_autos\\Services\\ApiClient.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAIwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T01:37:24.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "consensoria_autos\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "consensoria_autos\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAO8AAAAAAAAAAAAkwAgBAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T01:08:38.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MensajeContacto.cs",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Models\\MensajeContacto.cs",
+              "RelativeDocumentMoniker": "consensoria_autos\\Models\\MensajeContacto.cs",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Models\\MensajeContacto.cs",
+              "RelativeToolTip": "consensoria_autos\\Models\\MensajeContacto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T01:02:49.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "consensoria_autos\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "consensoria_autos\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T01:00:56.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "consensoria_autos\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\User PC\\OneDrive - Universidad Don Bosco\\Escritorio\\consensoria_autos\\consensoria_autos\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "consensoria_autos\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAcwGoAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T00:55:42.629Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+﻿@model consensoria_autos.Models.Car
+@{
+    ViewData["Title"] = "Add New Car";
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">Añadir nuevo vehiculo</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2"></i> @TempData["Success"]
+        </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <form id="carForm" asp-controller="Admin" asp-action="AddAuto" method="post" enctype="multipart/form-data" class="border rounded p-4 bg-white shadow-sm">
+
+        <!-- Modelo -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Model</label>
+                <input asp-for="model" class="form-control" placeholder="e.g., Toyota Corolla" required />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Transmision</label>
+                <select asp-for="transmission_id" class="form-select" required>
+                    <option value="">Select...</option>
+                    @if (ViewBag.Transmissions != null)
+                    {
+                        foreach (var t in ViewBag.Transmissions)
+                        {
+                            <option value="@t.id">@t.type</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <!-- Año, Precio, Condición -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Año</label>
+                <input asp-for="year" type="number" class="form-control" min="1990" max="2100" required />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Precio ($)</label>
+                <input asp-for="price" type="number" step="0.01" class="form-control" required />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Condicion</label>
+                <select asp-for="condition_id" class="form-select" required>
+                    <option value="">Select...</option>
+                    @if (ViewBag.Conditions != null)
+                    {
+                        foreach (var c in ViewBag.Conditions)
+                        {
+                            <option value="@c.id">@c.label</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Descripcion</label>
+            <textarea asp-for="description" class="form-control" rows="3" placeholder="Añade detalles del vehiculo..."></textarea>
+        </div>
+
+        <!-- Imagen -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Imágenes del vehículo</label>
+            <div class="d-flex gap-2 align-items-center mb-2">
+                <input type="file" id="carImageInput" class="form-control" accept="image/*" />
+                <button type="button" id="addImageBtn" class="btn btn-outline-primary">Añadir imagen</button>
+            </div>
+            <small class="text-muted">Puedes agregar varias imágenes una por una y eliminar las que no quieras antes de subir.</small>
+        </div>
+
+        <!-- Contenedor de previsualización -->
+        <div id="previewContainer" class="row g-3 mb-3"></div>
+
+        <input type="hidden" name="images" id="imagesField" />
+
+        <!-- Publicación -->
+        <div class="form-check mb-3">
+            <input asp-for="is_published" class="form-check-input" type="checkbox" id="publishCheck" />
+            <label class="form-check-label" for="publishCheck">Publicar (Sera visible en la pagina)</label>
+        </div>
+
+        <!-- Botón -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+            <i class="bi bi-plus-circle"></i> Crear
+        </button>
+    </form>
+
+    <a asp-controller="Admin" asp-action="AutoList" class="btn btn-outline-secondary mt-3">Regresar a la lista</a>
+</div>
+
+<script>
+    const previewContainer = document.querySelector("#previewContainer");
+    const imageInput = document.querySelector("#carImageInput");
+    const addImageBtn = document.querySelector("#addImageBtn");
+    const imagesField = document.querySelector("#imagesField");
+    let selectedImages = [];
+
+    // Añadir imagen localmente
+    addImageBtn.addEventListener("click", () => {
+        const file = imageInput.files[0];
+        if (!file) return alert("Selecciona una imagen antes de añadir.");
+        if (!file.type.startsWith("image/")) return alert("Solo se permiten imágenes.");
+
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            const index = selectedImages.length;
+            selectedImages.push({ file, preview: ev.target.result });
+
+            const col = document.createElement("div");
+            col.className = "col-md-3 text-center";
+            col.innerHTML = `
+                    <div class="card shadow-sm border-0 position-relative">
+                        <img src="${ev.target.result}" class="card-img-top rounded" style="height:150px; object-fit:cover;">
+                        <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-1" onclick="removeImage(${index})">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                        <div class="card-body p-2 small">
+                            <p class="mb-1 text-truncate">${file.name}</p>
+                            <span class="text-muted">${(file.size / 1024).toFixed(1)} KB</span>
+                        </div>
+                    </div>
+                `;
+            previewContainer.appendChild(col);
+            imageInput.value = ""; // limpiar input
+        };
+        reader.readAsDataURL(file);
+    });
+
+    // Eliminar imagen local
+    function removeImage(index) {
+        selectedImages.splice(index, 1);
+        renderPreview();
+    }
+
+    // Renderizar preview actualizado
+    function renderPreview() {
+        previewContainer.innerHTML = "";
+        selectedImages.forEach((img, index) => {
+            const col = document.createElement("div");
+            col.className = "col-md-3 text-center";
+            col.innerHTML = `
+                    <div class="card shadow-sm border-0 position-relative">
+                        <img src="${img.preview}" class="card-img-top rounded" style="height:150px; object-fit:cover;">
+                        <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-1" onclick="removeImage(${index})">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                `;
+            previewContainer.appendChild(col);
+        });
+    }
+
+    // Subir todas las imágenes al enviar formulario
+    document.querySelector("#carForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!selectedImages.length) {
+            alert("Por favor, agrega al menos una imagen antes de continuar.");
+            return;
+        }
+
+        const formData = new FormData();
+        selectedImages.forEach(img => formData.append("files", img.file));
+
+        const res = await fetch("http://localhost:3000/api/upload/multi", { method: "POST", body: formData });
+        const data = await res.json();
+
+        if (!data.images) {
+            alert("❌ Error al subir las imágenes");
+            return;
+        }
+
+        // Guardar URLs en campo oculto
+        const urls = data.images.map(i => i.url);
+        imagesField.value = JSON.stringify(urls);
+
+        e.target.submit(); // enviar formulario real
+    });
+</script>

@@ -1,0 +1,83 @@
+﻿@model consensoria_autos.Models.Message
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<!-- Hero principal -->
+<section class="bg-secondary text-white text-center py-5 rounded-3 mb-5">
+    <div class="container">
+        <h1 class="fw-bold display-5 mb-4">Simple, Directo y Eficaz</h1>
+        <div class="input-group w-75 mx-auto" style="max-width: 600px;">
+            <input type="text" class="form-control" placeholder="Buscar por modelo..." />
+            <button class="btn btn-primary">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de contacto -->
+<section class="pb-5">
+    <div class="container">
+        <h3 class="fw-semibold mb-4">¡Ponte en contacto con nosotros!</h3>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <div class="card shadow border-0 p-4">
+            <div class="row g-0">
+                <!-- Información -->
+                <div class="col-md-4 bg-primary text-white p-4 rounded-start">
+                    <h5 class="fw-bold mb-3">Nuestra información de contacto</h5>
+                    <p class="small">Con gusto nos pondremos en contacto lo más pronto posible.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +503 2222-3333</li>
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> contacto@consensoriaautos.com</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> Av. Las Mercedes, Soyapango, San Salvador</li>
+                    </ul>
+                </div>
+
+                <!-- Formulario -->
+                <div class="col-md-8 bg-white p-4 rounded-end">
+                    <form asp-controller="Home" asp-action="Contact" method="post">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label asp-for="first_name" class="form-label fw-semibold">Nombre</label>
+                                <input asp-for="first_name" class="form-control" placeholder="Tu nombre" required />
+                            </div>
+                            <div class="col">
+                                <label asp-for="last_name" class="form-label fw-semibold">Apellido</label>
+                                <input asp-for="last_name" class="form-control" placeholder="Tu apellido" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label asp-for="email" class="form-label fw-semibold">Correo electrónico</label>
+                                <input asp-for="email" type="email" class="form-control" placeholder="tucorreo@email.com" required />
+                            </div>
+                            <div class="col">
+                                <label asp-for="phone" class="form-label fw-semibold">Teléfono de contacto</label>
+                                <input asp-for="phone" class="form-control" placeholder="(+503) 7000-0000" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="content" class="form-label fw-semibold">Mensaje</label>
+                            <textarea asp-for="content" class="form-control" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-2">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

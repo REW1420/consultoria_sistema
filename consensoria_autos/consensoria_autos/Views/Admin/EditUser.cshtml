@@ -1,0 +1,87 @@
+﻿@model consensoria_autos.Models.User
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">Editar usuario</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <form asp-controller="Admin" asp-action="EditUser" method="post" class="border rounded p-4 bg-white shadow-sm">
+        <input type="hidden" asp-for="id" />
+
+        <!-- Full Name & Username -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Nombre completo</label>
+                <input asp-for="full_name" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Usuario</label>
+                <input asp-for="username" class="form-control" required />
+            </div>
+        </div>
+
+        <!-- Email & Role -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Correo</label>
+                <input asp-for="email" type="email" class="form-control" required />
+            </div>
+
+            <!-- Selector de rol -->
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">Role</label>
+                <select name="role_id" class="form-select" required>
+
+                    @if (ViewBag.Roles != null)
+                    {
+                        foreach (var r in ViewBag.Roles)
+                        {
+                            <option value="@r.id" selected="@(Model.user_roles?.id == r.id ? "selected" : null)">
+                                @r.name
+                            </option>
+                        }
+                    }
+
+
+
+                </select>
+            </div>
+
+           
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Contraseña</label>
+            <input asp-for="password"
+                   type="password"
+                   class="form-control"
+                   value=""
+                   placeholder="••••••"
+                   autocomplete="new-password" />
+            <small class="text-muted">Deja vacío para mantener la contraseña actual.</small>
+        </div>
+
+
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-warning w-100 mt-3">
+            <i class="bi bi-pencil-square"></i> Actualizar
+        </button>
+    </form>
+
+    <a asp-controller="Admin" asp-action="Users" class="btn btn-outline-secondary mt-3">
+        Regresar
+    </a>
+</div>
