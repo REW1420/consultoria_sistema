@@ -4,11 +4,23 @@
 }
 
 <!-- Hero -->
-<section class="bg-secondary text-white text-center py-3 rounded-3 mb-4">
-    <div class="container">
+<section class="text-white text-center py-3 rounded-3 mb-4 position-relative"
+         style="
+             background-image: url('/images/banner.png');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             overflow: hidden;
+         ">
+    <!-- Capa oscura para legibilidad -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45);"></div>
+
+    <!-- Contenido -->
+    <div class="container position-relative">
         <form asp-controller="Home" asp-action="Index" method="get" class="d-flex justify-content-center">
             <div class="input-group w-50 mx-auto" style="max-width: 600px;">
-                <input type="text" name="search" class="form-control" placeholder="Buscar por modelo..." value="@ViewBag.Search" />
+                <input type="text" name="search" class="form-control"
+                       placeholder="Buscar por modelo..." value="@ViewBag.Search" />
                 <button class="btn btn-primary" type="submit">
                     <i class="bi bi-search"></i> Buscar
                 </button>
@@ -16,6 +28,7 @@
         </form>
     </div>
 </section>
+
 
 <!-- Detalles del vehículo -->
 <div class="container pb-5">

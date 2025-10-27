@@ -6,8 +6,8 @@
 <!-- Hero -->
 <section class="bg-secondary text-white text-center py-4 rounded-3 mb-5">
     <div class="container">
-        <h1 class="fw-bold display-6 mb-3">Contact the Seller</h1>
-        <p class="lead mb-0">Ask directly about this vehicle.</p>
+        <h1 class="fw-bold display-6 mb-3">Contactanos</h1>
+        <p class="lead mb-0">Has tu pregunta directamente sobre este vehiculo.</p>
     </div>
 </section>
 
@@ -28,7 +28,7 @@
                     <i class="bi bi-circle"></i> Condition: @(Model.car_conditions.label ?? "Used")
                 </p>
                 <a asp-controller="Home" asp-action="Details" asp-route-id="@Model.id" class="btn btn-outline-primary btn-sm">
-                    View full details
+                    Ver todos los detalles
                 </a>
             </div>
         </div>
@@ -38,13 +38,13 @@
 <!-- Contact Form -->
 <section class="pb-5">
     <div class="container">
-        <h4 class="fw-semibold mb-4">Send your information and we’ll reach out soon</h4>
+        <h4 class="fw-semibold mb-4">Envianos un mensaje, lo atenderemos lo mas pronto posible</h4>
 
         <div class="card shadow border-0 p-4">
             <div class="row g-0">
                 <!-- Contact info -->
                 <div class="col-md-4 bg-primary text-white p-4 rounded-start">
-                    <h5 class="fw-bold mb-3">Contact Information</h5>
+                    <h5 class="fw-bold mb-3">Informacio de contacto</h5>
                     <ul class="list-unstyled mt-4">
                         <li class="mb-3"><i class="bi bi-telephone me-2"></i> +503 2222-3333</li>
                         <li class="mb-3"><i class="bi bi-envelope me-2"></i> sales@consensoriaautos.com</li>
@@ -58,18 +58,18 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label fw-semibold">First Name</label>
-                                <input name="first_name" type="text" class="form-control" placeholder="Your name" required />
+                                <input name="first_name" type="text" class="form-control" placeholder="Nombre" required />
                             </div>
                             <div class="col">
                                 <label class="form-label fw-semibold">Last Name</label>
-                                <input name="last_name" type="text" class="form-control" placeholder="Your last name" />
+                                <input name="last_name" type="text" class="form-control" placeholder="Apellidos" />
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label fw-semibold">Email</label>
-                                <input name="email" type="email" class="form-control" placeholder="youremail@email.com" required />
+                                <input name="email" type="email" class="form-control" placeholder="correo@email.com" required />
                             </div>
                             <div class="col">
                                 <label class="form-label fw-semibold">Phone</label>
@@ -79,10 +79,10 @@
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Message</label>
-                            <textarea name="content" class="form-control" rows="4" placeholder="I'm interested in the @Model.model..."></textarea>
+                            <textarea name="content" class="form-control" rows="4" placeholder="Estoy interesado en @Model.model..."></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100 mt-2">Send Message</button>
+                        <button type="submit" class="btn btn-primary w-100 mt-2">Enviar mensaje</button>
                     </form>
 
                 </div>

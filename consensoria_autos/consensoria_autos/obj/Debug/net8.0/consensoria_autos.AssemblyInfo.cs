@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("consensoria_autos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d4b8a7439f953599a462b2eaaa07e22050fc4a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b5e48f11e725e8040723f197303d0dec05e276b")]
 [assembly: System.Reflection.AssemblyProductAttribute("consensoria_autos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("consensoria_autos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
